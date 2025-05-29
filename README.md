@@ -1,56 +1,84 @@
-# React + TypeScript + Vite
+# Application Documentation
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## 1. Introduction
 
-Currently, two official plugins are available:
+This application is a solution to the Vehicle Rental Technical Challenge. It was developed using React with TypeScript, and styled with a combination of Material UI and Tailwind CSS to closely match the design provided in Figma.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+The main goal of this project is to simulate a vehicle rental platform, allowing users to:
 
-## Expanding the ESLint configuration
+- Display a list of rental vehicles using a local JSON file (simulating an API response).
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+- Filter vehicles by features such as number of doors, luggage capacity, category, and price range.
 
-```js
-export default tseslint.config({
-  extends: [
-    // Remove ...tseslint.configs.recommended and replace with this
-    ...tseslint.configs.recommendedTypeChecked,
-    // Alternatively, use this for stricter rules
-    ...tseslint.configs.strictTypeChecked,
-    // Optionally, add this for stylistic rules
-    ...tseslint.configs.stylisticTypeChecked,
-  ],
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
+- Sort vehicles by price (highest to lowest and vice versa).
+
+- View additional fare details via an interactive tooltip.
+
+- Select up to 5 vehicles for quotation, with a visual indicator showing the selection order.
+
+Application state is managed using Zustand, and the implementation leverages modern React hooks like useState, useEffect, useMemo, useRef, and useCallback to deliver a responsive and user-friendly experience.
+
+### Prerequisites
+
+1. **Node.js** (recommended version: 16.x or higher)
+2. **npm** or **yarn** for package management.
+
+### Instructions to install and run the client
+
+1. **Clone the client repository**:
+
+```bash
+git clone https://github.com/mathiuzdev/greenflame-challenge.git
+
+cd greenflame-challenge
+
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+1. **Install dependencies**: Run the following command to install the necessary dependencies.
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+   ```bash
+   npm install
+   ```
 
-export default tseslint.config({
-  plugins: {
-    // Add the react-x and react-dom plugins
-    'react-x': reactX,
-    'react-dom': reactDom,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended typescript rules
-    ...reactX.configs['recommended-typescript'].rules,
-    ...reactDom.configs.recommended.rules,
-  },
-})
-```
+   Or if you prefer to use yarn:
 
-# greenflame-challenge
+   ```bash
+   yarn install
+   ```
+
+1. **Develop locally (Development mode)**: To start the development server and see the app in action, run:
+
+   ```bash
+   npm run dev
+   ```
+
+   Or if using yarn:
+
+   ```bash
+   yarn dev
+   ```
+
+1. **Open the application in the browser**: Once the development server is running, open your browser and go to [http://localhost:5173/](http://localhost:PORT/).
+1. **Build for production**: To create an optimized production-ready version of the app, run:
+
+   ```bash
+   npm run build
+   ```
+
+   Or if using yarn:
+
+   ```bash
+   yarn build
+   ```
+
+1. **Preview the production build**: If you want to preview how the application will look in production:
+
+   ```bash
+   npm run preview
+   ```
+
+   Or if using yarn
+
+   ```bash
+   yarn preview
+   ```
