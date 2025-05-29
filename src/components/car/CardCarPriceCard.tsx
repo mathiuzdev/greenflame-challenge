@@ -27,7 +27,6 @@ export const CardCarPriceCard = ({
   isDisplayedInFooter,
   onFooterSelect,
   isQuoted,
-  selectionOrder,
   carId,
 }: CardCarPriceCardProps) => {
   const [openModal, setOpenModal] = useState(false);

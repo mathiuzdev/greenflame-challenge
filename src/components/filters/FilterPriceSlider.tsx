@@ -11,8 +11,8 @@ export const FilterPriceSlider = () => {
     (state) => state.setSelectedPriceRange
   );
 
-  const [inputMinStr, setInputMinStr] = useState("");
-  const [inputMaxStr, setInputMaxStr] = useState("");
+  const [, setInputMinStr] = useState("");
+  const [, setInputMaxStr] = useState("");
   const [open, setOpen] = useState(true);
 
   useEffect(() => {
