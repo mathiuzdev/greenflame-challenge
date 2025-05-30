@@ -15,7 +15,6 @@ interface CarListProps {
 
 export const CarList = ({
   sortedCars,
-  data, // data might still be useful for other things, or could be removed if not used elsewhere
   getOrderedFeatures,
   getCarEstimatedPrice,
   onAddToQuote,
