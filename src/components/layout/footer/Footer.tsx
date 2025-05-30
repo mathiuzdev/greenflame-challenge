@@ -6,8 +6,8 @@ const Footer = () => {
   return (
     <footer className="mt-auto">
       <Newsletter />
-      <div className="bg-white px-[313px]">
-        <div className="container mx-auto">
+      <div className=" bg-white  ">
+        <div className=" max-w-[1273px] min-w-[1273px]  mx-auto ">
           <section className="lg:flex justify-between gap-x-17.5 py-12">
             <div className="max-w-72 mb-10 lg:mb-0">
               <img

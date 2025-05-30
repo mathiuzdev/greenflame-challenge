@@ -86,9 +86,7 @@ export const CarCard = (props: CarCardProps) => {
   const inclusionsData = getInclusionsFromCar(carObj || props);
   return (
     <div
-      className={`flex w-full rounded-2xl shadow bg-white relative overflow-hidden ${
-        isDisplayedInFooter ? "border-2 border-UDR" : ""
-      }`}
+      className={`flex w-full rounded-2xl shadow bg-white relative overflow-hidden `}
       style={{ maxWidth: 968, height: 271 }}
     >
       <div className="absolute top-0 left-0 bottom-0 w-2  bg-UDR"></div>

@@ -3,7 +3,7 @@ import ChevronRightIcon from "@mui/icons-material/ChevronRight";
 export const Header = () => {
   return (
     <header className="w-full shadow-sm bg-white">
-      <div className="justify-between max-w-screen h-[88px] px-[313px] py-6 flex items-center gap-2 mx-auto text-sm border-b border-gray-50 ">
+      <div className="justify-between max-w-[1273px] h-[88px]  py-6 flex items-center gap-2 mx-auto text-sm border-b border-gray-50 ">
         <div className="flex items-center gap-4 min-w-[320px]">
           <img src="/imgs/icons_logos/logo-udr.svg" alt="Logo" />
         </div>
@@ -46,7 +46,7 @@ export const Header = () => {
         </div>
       </div>
 
-      <div className="min-w-full justify-between h-[80px]  px-[312px] py-6 flex items-center font-medium text-sm">
+      <div className=" justify-between h-[80px]  max-w-[1273px] mx-auto py-6 flex items-center font-medium text-sm">
         <div className="flex py-1.5 gap-9 bg-gray-100 rounded-lg  items-center ">
           <p className="py-2.5 px-6  ">Miami International Airport (MIA)</p>
           <ChevronRightIcon fontSize="small" className="text-blue-400" />
@@ -58,13 +58,13 @@ export const Header = () => {
 
           <p className=" py-2.5 px-6 ">30 septiembre 2025, 18:00</p>
         </div>
-        <button className="bg-UDR  flex gap-5  text-white py-4 px-12 rounded-lg">
+        <button className="bg-UDR cursor-pointer flex gap-5  text-white py-4 px-12 rounded-lg">
           Modificar
         </button>
       </div>
 
-      <div className="w-full flex py-2.5 px-[312px] justify-center items-center bg-primary-800 text-white text-sm  lg:px-20  gap-6 h-[68px]">
-        <div className="flex gap-9 py-1.5">
+      <div className="w-full flex py-2.5 justify-center items-center bg-primary-800 text-white text-sm  lg:px-20  gap-6 h-[68px]">
+        <div className="flex gap-9 py-1.5 max-w-[1273px] min-w-[1273px]  mx-auto ">
           <div className="flex items-center font-bold text-primary-50 py-2.5 px-6">
             Selecciona tu vehículo
           </div>

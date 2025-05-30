@@ -4,12 +4,16 @@ interface MainHeaderProps {
   sortedCarsLength: number;
   sortOrder: "desc" | "asc";
   setSortOrder: (order: "desc" | "asc") => void;
+  showHighlightedFirst: boolean; // Added prop
+  setShowHighlightedFirst: (value: boolean) => void; // Added prop
 }
 
 export const MainHeader = ({
   sortedCarsLength,
   sortOrder,
   setSortOrder,
+  showHighlightedFirst, // Destructure prop
+  setShowHighlightedFirst, // Destructure prop
 }: MainHeaderProps) => {
   const [open, setOpen] = useState(false);
   const options = [
@@ -30,25 +34,27 @@ export const MainHeader = ({
               type="checkbox"
               name="destacados"
               id="destacados"
-              className="accent-UDR w-4 h-4"
+              className="accent-UDR w-4 h-4 cursor-pointer"
+              checked={showHighlightedFirst} // Control checked state
+              onChange={(e) => setShowHighlightedFirst(e.target.checked)} // Update state on change
             />
             <label
               htmlFor="destacados"
-              className="text-gray-800 font-medium text-sm select-none"
+              className="text-gray-800 font-medium cursor-pointer text-sm select-none"
             >
               Mostrar destacados primero
             </label>
           </div>
         </div>
         <div className="flex items-center gap-4 relative">
-          <button className="bg-UDR text-white px-5 pt-3 pb-3.5 rounded-lg font-bold shadow hover:bg-[#294a99] transition-colors text-sm">
+          <button className="bg-UDR text-white px-5 pt-3 pb-3.5 rounded-lg cursor-pointer font-bold shadow hover:bg-[#294a99] transition-colors text-sm">
             Enviar cotización
           </button>
 
           <div className="relative">
             <button
               type="button"
-              className="rounded-lg px-5 pt-3 pb-3.5 gap-5 text-gray-800 font-bold text-sm bg-white flex items-center"
+              className="rounded-lg cursor-pointer px-5 pt-3 pb-3.5 gap-5 text-gray-800 font-bold text-sm bg-white flex items-center"
               aria-haspopup="listbox"
               aria-expanded={open}
               onClick={() => setOpen((v) => !v)}

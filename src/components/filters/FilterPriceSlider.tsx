@@ -46,7 +46,9 @@ export const FilterPriceSlider = () => {
   return (
     <section>
       <div
-        className="flex gap-x-2 justify-between items-center  w-full py-[13px] pr-5 pl-[30px] bg-[#F4F7FA] hover:bg-[#e9eef5] transition-colors cursor-pointer select-none"
+        className={`flex gap-x-2 justify-between items-center ${
+          open ? "" : "rounded-b-2xl"
+        } w-full py-[13px] pr-5 pl-[30px] bg-[#F4F7FA] hover:bg-[#e9eef5] transition-colors cursor-pointer select-none`}
         onClick={() => setOpen((prev) => !prev)}
         role="button"
         aria-expanded={open}
@@ -66,7 +68,7 @@ export const FilterPriceSlider = () => {
       </div>
 
       {open && (
-        <div className="bg-white pl-[30px] pr-[20px] pt-6 pb-4 rounded-b-lg flex flex-col gap-6">
+        <div className="bg-white pl-[30px] pr-[20px] py-6 rounded-b-lg flex flex-col gap-6">
           <Slider
             value={[selectedMin, selectedMax]}
             min={min}

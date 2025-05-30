@@ -6,6 +6,7 @@ interface FilterCheckboxGroupProps {
   items: string[];
   namePrefix?: string;
   onChange?: (selected: string[]) => void;
+  itemCounts?: Record<string, number>;
 }
 
 export const FilterCheckboxGroup = ({
@@ -14,6 +15,7 @@ export const FilterCheckboxGroup = ({
   namePrefix = "",
   onChange,
   defaultOpen = true,
+  itemCounts,
 }: FilterCheckboxGroupProps & { defaultOpen?: boolean }) => {
   const [selectedItems, setSelectedItems] = useState<string[]>([]);
   const [open, setOpen] = useState(defaultOpen);
@@ -32,10 +34,12 @@ export const FilterCheckboxGroup = ({
   };
 
   return (
-    <section className=" border-[#E3E8EF] flex flex-col gap-6 ">
+    <section
+      className={` border-[#E3E8EF] flex ${open ? "pb-6" : ""} flex-col gap-6 `}
+    >
       <button
         type="button"
-        className="flex gap-x-2 items-center w-full py-[13px] pr-5 pl-[30px] bg-[#F4F7FA] hover:bg-[#e9eef5] transition-colors"
+        className="flex cursor-pointer gap-x-2 items-center w-full py-[13px] pr-5 pl-[30px] bg-[#F4F7FA] hover:bg-[#e9eef5] transition-colors"
         onClick={() => setOpen((prev) => !prev)}
         aria-expanded={open}
       >
@@ -56,7 +60,7 @@ export const FilterCheckboxGroup = ({
           {items.map((item, index) => {
             const checkboxId = `${namePrefix}-${item}`;
             return (
-              <div className="flex items-center gap-2.5  px-[30px]" key={index}>
+              <div className="flex items-center gap-2.5  pl-[30px]" key={index}>
                 <input
                   type="checkbox"
                   name={item}
@@ -67,9 +71,12 @@ export const FilterCheckboxGroup = ({
                       : selectedItems.includes(item)
                   }
                   onChange={() => handleChange(item)}
-                  className="accent-UDR mr-2 "
+                  className="accent-UDR mr-2 cursor-pointer"
                 />
-                <label htmlFor={checkboxId} className="text-gray-800 text-sm">
+                <label
+                  htmlFor={checkboxId}
+                  className="text-gray-800 text-sm cursor-pointer"
+                >
                   {item}{" "}
                   {namePrefix === "capacitySuitcase"
                     ? "ó más maletas"
@@ -77,6 +84,10 @@ export const FilterCheckboxGroup = ({
                     ? "pasajeros"
                     : ""}
                 </label>
+
+                <span className="text-blue-400 font-medium ">
+                  ({itemCounts?.[item] ?? 0})
+                </span>
               </div>
             );
           })}
