@@ -18,3 +18,14 @@
   --color-gray-500: #8292aa;
   --shadow-aside: 0px 0px 20px 0px #0000000d;
 }
+
+@font-face {
+  font-family: "GTWalsheim";
+  src: url("/fonts/subset-GTWalsheim-Regular-_1.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+body {
+  font-family: "GTWalsheim", sans-serif;
+}
